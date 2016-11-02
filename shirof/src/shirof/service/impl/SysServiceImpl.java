@@ -3,6 +3,8 @@ package shirof.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import shirof.mapper.SysUserMapper;
 import shirof.po.ActiveUser;
@@ -16,6 +18,8 @@ import shirof.util.exception.UserException;
  * @author yang
  * 认证和授权的服务接口
  */
+@Service
+@Transactional
 public class SysServiceImpl implements SysService {
 
 	@Autowired

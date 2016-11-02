@@ -15,10 +15,10 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
         <!-- <load-on-startup>1</load-on-startup> --> 
         <!-- 这样初始化之后就不会读swm-servlet.xml 默认是 一般是用来配置springMVC的配置文件-->
-        <!-- <init-param>
+        <init-param>
         	<param-name>contextConfigLocation</param-name>
         	<param-value>classpath:spring/springmvc.xml</param-value>
-        </init-param> -->
+        </init-param>
     </servlet>  
     <servlet-mapping> 
         <servlet-name>springmvc</servlet-name> 

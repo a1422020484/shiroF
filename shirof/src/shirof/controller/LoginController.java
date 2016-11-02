@@ -11,7 +11,7 @@ import shirof.service.SysService;
 import shirof.util.exception.UserException;
 
 @Controller
-@RequestMapping("/ttt")
+@RequestMapping("/user")
 public class LoginController {
 	
 	@Autowired
@@ -20,15 +20,23 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login(HttpSession session ,String randomcode,String usercode,String password) throws Exception{
 		
-		String validateCode = (String) session.getAttribute("validateCode");
-		if(!validateCode.equals(randomcode)){
-			throw new UserException("验证码输入错误！");
-		}
+		//randomcode= "123";
+		//usercode ="lisi";
+		//password ="123456";
+		//String validateCode = (String) session.getAttribute("validateCode");
+		//if(!validateCode.equals(randomcode)){
+		//	throw new UserException("验证码输入错误！");
+		//}
 		//验证用户名和密码是否正确，返回用户信息 id,name,usercode
 		ActiveUser activeUser = sysService.authenticat(usercode, password);
 		//通过校验后把用户信息放到session里面！
 		session.setAttribute("activeUser", activeUser);
 		
-		return "jsp/index";
+		return "success";
+	}
+	
+	@RequestMapping("/toLogin")
+	public String toLogin(){
+		return "login";
 	}
 }
