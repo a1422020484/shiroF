@@ -117,8 +117,8 @@
 				<c:forEach items="${activeUser.menus }" var="menu">
 					<li><div>
 						<a title="${menu.name }" ref="1_1" href="#"
-							rel="${baseurl }/${menu.url }" icon="icon-log"><span
-							class="icon icon-log">&nbsp;</span><span class="nav"><a href=javascript:addTab('${menu.name }','${baseurl }/${menu.url }')>${menu.name }</a></span></a>
+							rel="${baseurl }${menu.url }" icon="icon-log"><span
+							class="icon icon-log">&nbsp;</span><span class="nav"><a href=javascript:addTab('${menu.name }','${baseurl }${menu.url }')>${menu.name }</a></span></a>
 					</div></li>
 				</c:forEach>
 				</ul>
